@@ -1,26 +1,152 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  MTC UW–Madison design tokens.
+  Change a colour here and it changes everywhere.
+  Palette is provisional until it is matched against the 2026 logo files.
+*/
+@theme {
+  --color-paper: #f4f1ea;
+  --color-paper-deep: #e9e5d9;
+  --color-ink: #17191a;
+  --color-ink-soft: #4b504d;
+  --color-forest: #1f3d2e;
+  --color-forest-deep: #12261c;
+  --color-moss: #9db8a5;
+  --color-clay: #a9552a;
+  --color-clay-light: #e2a47f;
+  --color-line: rgb(23 25 26 / 0.16);
+  --color-line-light: rgb(244 241 234 / 0.2);
+
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+
+  --breakpoint-xs: 26rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.04;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: var(--color-forest);
+    color: var(--color-paper);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-clay);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+  .on-dark :focus-visible {
+    outline-color: var(--color-clay-light);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Page gutter + max width. Every section sits inside one of these. */
+  .wrap {
+    width: 100%;
+    max-width: 84rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 48rem) {
+    .wrap {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  /* 12-column grid used for all asymmetric layouts. */
+  .grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 1.25rem;
+  }
+  @media (min-width: 64rem) {
+    .grid-12 {
+      column-gap: 2rem;
+    }
+  }
+
+  /* Small monospace label: section numbers, dates, captions. */
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1.4;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .display-xl {
+    font-size: clamp(2.6rem, 1.4rem + 4.6vw, 5rem);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+  }
+  .display-lg {
+    font-size: clamp(2rem, 1.3rem + 2.8vw, 3.5rem);
+  }
+  .display-md {
+    font-size: clamp(1.6rem, 1.25rem + 1.3vw, 2.25rem);
+    line-height: 1.1;
+  }
+  .lede {
+    font-size: clamp(1.15rem, 1.05rem + 0.5vw, 1.4rem);
+    line-height: 1.5;
+  }
+
+  /* Text link with a rule that thickens on hover. */
+  .link {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+    text-decoration-color: currentColor;
+    transition: color 150ms ease, text-decoration-color 150ms ease;
+  }
+  .link:hover {
+    color: var(--color-clay);
+  }
+  .on-dark .link:hover {
+    color: var(--color-clay-light);
+  }
+
+  /* Diagonal hatch used only for "photo still needed" slots. */
+  .hatch {
+    background-image: repeating-linear-gradient(
+      135deg,
+      transparent 0 9px,
+      rgb(23 25 26 / 0.07) 9px 10px
+    );
+  }
 }
