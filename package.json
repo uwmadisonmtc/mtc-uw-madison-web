@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "photos": "node scripts/photos.mjs",
+    "check": "node scripts/check-links.mjs",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "next": "16.4.6",
@@ -20,6 +23,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
+    "heic-convert": "^2.1.0",
+    "sharp": "^0.35.5",
     "tailwindcss": "4.3.3",
     "typescript": "^5"
   }
