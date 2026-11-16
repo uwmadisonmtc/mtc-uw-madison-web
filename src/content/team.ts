@@ -1,16 +1,17 @@
 /*
-  Leadership team.
+  Team.
 
-  Leave the list empty to hide the roster (the About page then shows a short
-  paragraph about student leadership instead). Add people only with their
-  permission. `photo` is an id from src/content/photos.ts (optional).
+  Add board members here and the Team section (and its menu link) appears.
+  While the list is empty the section is hidden.
+  `photo` is an id from src/content/photos.ts; add a matching slot there.
+
+  Example:
+    { name: "First Last", role: "President", photo: "team-first-last" },
 */
 
 export type TeamMember = {
   name: string;
   role: string;
-  /** e.g. "Computer Sciences, 2027". Optional. */
-  detail?: string;
   photo?: string;
 };
 

@@ -22,39 +22,40 @@ Other commands:
 
 ## Officer guide: updating the site
 
-You only need to edit files in `src/content/`. Each file starts with a comment explaining its fields.
+The site is one page. You only need to edit files in `src/content/`. Each file starts with a comment explaining its fields.
+
+### Change a link (group chat, Instagram, LinkedIn, email)
+Edit `src/content/site.config.ts`. A link set to `null` is simply not shown, so nothing broken is ever published.
 
 ### Add or change an event
-Edit `src/content/events.ts`. Copy an existing entry and change it. Give it a `date` like `"2027-02-10"`. The site moves it from **Upcoming** to **Past** by itself the day after. Plans without a date go in `inPlanning` in the same file.
-
-### Change a link (email, Instagram, signup, calendar)
-Edit `src/content/site.config.ts`. A link set to `null` is hidden everywhere on the site, so nothing broken is ever shown. In development you will see a dashed "Not configured" note where the button will appear.
+Edit `src/content/events.ts`. Give a new event a `date` like `"2027-02-10"`: it shows as **Next event** until the day passes, then moves into **Past events** by itself. Add `instagramUrl` to make a past-event card link to the post.
 
 ### Add or replace a photo
 1. Put the original in `_incoming/` (this folder is never uploaded to GitHub).
 2. Run, for example:
    ```bash
-   npm run photos -- "_incoming/MTC Kickoff/IMG_1234.HEIC" events/kickoff-01
+   npm run photos -- "_incoming/MTC Kickoff/IMG_1234.HEIC" events/kickoff
    ```
-   This saves a web-sized copy to `public/assets/events/kickoff-01.jpg` and removes location data. HEIC, JPEG, PNG and WebP work. Export RAW files as JPEG first.
-3. In `src/content/photos.ts`, set that slot's `file` to `"/assets/events/kickoff-01.jpg"` and write the `alt` text (what is in the picture) and a `caption`.
+   This saves a web-sized copy to `public/assets/events/kickoff.jpg` and removes location data. HEIC, JPEG, PNG and WebP work. Export RAW files as JPEG first.
+3. In `src/content/photos.ts`, set that slot's `file` to `"/assets/events/kickoff.jpg"` and write the `alt` text (what is in the picture).
 
 Only publish photos of people who are fine with being on the website.
 
-### Add the leadership team
-Edit `src/content/team.ts`. While the list is empty the About page shows a short paragraph instead of a roster.
+### Add the team
+Edit `src/content/team.ts`. The Team section and its menu link appear as soon as the list has people in it. For headshots, add a photo slot per person in `photos.ts` and use its id as `photo`.
 
-### Add or update a project
-Edit `src/content/projects.ts`. Every project has a `status` (`shipped`, `in-development`, or `planned`) that is shown on the page. Keep it accurate.
+### Add a project
+Edit `src/content/projects.ts`.
 
-### Change the wording of the four pillars or the "ways in"
+### Change the four "What we do" blocks
 Edit `src/content/pillars.ts`.
 
 ## Design
 
-- Colours, type sizes, and the grid are defined once in `src/app/globals.css`.
-- Fonts: Bricolage Grotesque (headings), IBM Plex Sans (text), IBM Plex Mono (labels).
-- Shared pieces are in `src/components/`. Pages are in `src/app/<page>/page.tsx`.
+- Black and white from the MTC logo, plus one accent colour. All colours are defined once at the top of `src/app/globals.css`; change `--color-accent` to change the accent everywhere.
+- Fonts: Archivo (headings), Instrument Sans (text).
+- Each section of the page is its own file in `src/components/sections/`; `src/app/page.tsx` lists them in order.
+- Logo files are in `public/assets/brand/`.
 
 ## Deploying
 

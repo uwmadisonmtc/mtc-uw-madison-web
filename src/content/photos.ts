@@ -24,51 +24,12 @@ export type PhotoSlot = {
 };
 
 export const photos = {
-  hero: {
-    file: null,
-    alt: "",
-    brief: "Hero: students talking or working together at an MTC event. Landscape or 4:5.",
-  },
-  kickoff: {
-    file: null,
-    alt: "",
-    brief: "MTC Kickoff: the room, wide shot.",
-  },
-  "internship-panel": {
-    file: null,
-    alt: "",
-    brief: "Internship Panel: panelists or audience.",
-  },
-  "professional-development": {
-    file: null,
-    alt: "",
-    brief: "Professional Development: students working together.",
-  },
-  "ai-discussion": {
-    file: null,
-    alt: "",
-    brief: "AI Discussion: the group mid-conversation.",
-  },
-  "community-1": {
-    file: null,
-    alt: "",
-    brief: "Candid: small group talking.",
-  },
-  "community-2": {
-    file: null,
-    alt: "",
-    brief: "Candid: food, setup, or in-between moment.",
-  },
-  "about-group": {
-    file: null,
-    alt: "",
-    brief: "About: group photo of the chapter.",
-  },
-  "project-nfc": {
-    file: null,
-    alt: "",
-    brief: "NFC Scavenger Hunt: a real tag, prototype, or build session. No mock-ups.",
-  },
+  hero: { file: null, alt: "", brief: "Hero: wide shot of students at an MTC event." },
+  kickoff: { file: null, alt: "", brief: "MTC Kickoff" },
+  "internship-panel": { file: null, alt: "", brief: "Internship Panel" },
+  "professional-development": { file: null, alt: "", brief: "Professional Development" },
+  "ai-discussion": { file: null, alt: "", brief: "AI Discussion" },
+  "project-nfc": { file: null, alt: "", brief: "NFC Scavenger Hunt: a real tag or build session." },
 } satisfies Record<string, PhotoSlot>;
 
 export type PhotoId = keyof typeof photos;

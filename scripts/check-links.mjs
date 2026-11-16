@@ -11,7 +11,7 @@ const config = await read("site.config.ts");
 const photos = await read("photos.ts");
 
 const missingLinks = [...config.matchAll(/^\s*(\w+):\s*null,/gm)].map((m) => m[1]);
-const emptySlots = [...photos.matchAll(/^\s*"?([\w-]+)"?:\s*\{\s*\n\s*file:\s*null/gm)].map((m) => m[1]);
+const emptySlots = [...photos.matchAll(/^\s*"?([\w-]+)"?:\s*\{\s*file:\s*null/gm)].map((m) => m[1]);
 
 if (missingLinks.length) console.log(`Unconfigured links (src/content/site.config.ts): ${missingLinks.join(", ")}`);
 if (emptySlots.length) console.log(`Empty photo slots (src/content/photos.ts): ${emptySlots.join(", ")}`);
