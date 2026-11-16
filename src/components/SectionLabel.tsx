@@ -11,7 +11,7 @@ export function SectionLabel({
   className?: string;
 }) {
   return (
-    <p className={`label flex items-center gap-3 ${className}`}>
+    <p className={`label flex items-center gap-3 self-start ${className}`}>
       {index && <span className="tabular-nums opacity-60">{index}</span>}
       {index && <span aria-hidden="true" className="h-px w-6 bg-current opacity-40" />}
       <span>{children}</span>

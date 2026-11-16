@@ -114,6 +114,12 @@
     line-height: 0.98;
     letter-spacing: -0.035em;
   }
+  /* Home hero only: sized so each sentence holds one line on desktop. */
+  .display-hero {
+    font-size: clamp(2.5rem, 1.5rem + 3.6vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
   .display-lg {
     font-size: clamp(2rem, 1.3rem + 2.8vw, 3.5rem);
   }
