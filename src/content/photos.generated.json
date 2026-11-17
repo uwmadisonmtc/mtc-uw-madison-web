@@ -1,1 +1,32 @@
-{}
+{
+  "/assets/brand/mtc-logo-black.png": {
+    "width": 889,
+    "height": 331,
+    "blurDataURL": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4WAoAAAAQAAAADwAABQAAQUxQSGEAAAAAAAUIAAIKBACYkAADBxYEAEjJznqe2KJT5+abKIRGCwDjZR/tpQi5k52tEaNfAAMB7x0AvWkAepyHkgDNMwADAPEgAMFtAH6fg64An64CBh/MGQCjWwBpiynXrBykuIEvAFZQOCAYAAAAMAEAnQEqEAAGAAOAWiWkAANwAP714MAA"
+  },
+  "/assets/brand/mtc-logo-white.png": {
+    "width": 889,
+    "height": 331,
+    "blurDataURL": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4WAoAAAAQAAAADwAABQAAQUxQSGEAAAAAAAUIAAIKBACYkAADBxYEAEjJznqe2KJT5+abKIRGCwDjZR/tpQi5k52tEaNfAAMB7x0AvWkAepyHkgDNMwADAPEgAMFtAH6fg64An64CBh/MGQCjWwBpiynXrBykuIEvAFZQOCAYAAAAMAEAnQEqEAAGAAOAWiWkAANwAP71CAAA"
+  },
+  "/assets/events/ai-discussion.jpg": {
+    "width": 2400,
+    "height": 1600,
+    "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABQAgCdASoQAAsAA4BaJZQCdAYvhkwu0o8o0gAA4n+LPzNeuPBfj6vubjjDRqJ4sLijWVw6pWDWKPQLgfHINL6eiE8vLxjSFd18ctHz0XneYzRFhLJBWmqFrqKVaoOu/2KXx0lQAAA="
+  },
+  "/assets/events/hero.jpg": {
+    "width": 2400,
+    "height": 1600,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoQAAsAA4BaJQBOgB4bMZQv1gAA/vF/jnf62dcIjpzZbbW8fpFJT8T2YFh6t3T/qn1ieXh6Sh4T9P6BRmZvWD8+0AAAAA=="
+  },
+  "/assets/events/internship-panel.jpg": {
+    "width": 2400,
+    "height": 3200,
+    "blurDataURL": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAABwBACdASoQABUAPu1iqU2ppaQiMAgBMB2JYgCdMoMYADwkDq+pS/3o/P7zwAD+JbamWEtpLg8tHdmTVu8aQVCpUkN+5kVAcZeaz15MdCu0jMSK4ovtTN1coVCei572q55Agj81EGvz3/OF+V3ZiMyXh2vbaDEEvPnJ3GYFMrVP6+Az//YfJumj7zak9ZKBZR5AxTgzReuiTxM88HfQcTInN460Yvuh7gA="
+  },
+  "/assets/events/professional-development.jpg": {
+    "width": 2400,
+    "height": 1600,
+    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAwAgCdASoQAAsAA4BaJbACdAYwTEZpGxqwAAD+GdDfJJZC3PMDNgdhZ+r8Jj6+A0wRc9r52ppczoPizVLkVG9dZuyiIeYi+TCYcDVlPiws4NnVR2+BUSe6A9Uy/DINeLtn/cwA"
+  }
+}

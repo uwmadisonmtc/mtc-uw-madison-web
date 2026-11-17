@@ -36,8 +36,8 @@ Edit `src/content/events.ts`. Give a new event a `date` like `"2027-02-10"`: it 
    ```bash
    npm run photos -- "_incoming/MTC Kickoff/IMG_1234.HEIC" events/kickoff
    ```
-   This saves a web-sized copy to `public/assets/events/kickoff.jpg` and removes location data. HEIC, JPEG, PNG and WebP work. Export RAW files as JPEG first.
-3. In `src/content/photos.ts`, set that slot's `file` to `"/assets/events/kickoff.jpg"` and write the `alt` text (what is in the picture).
+   This saves a web-sized copy to `public/assets/events/kickoff.jpg` and removes location data. HEIC, JPEG, PNG, WebP and Canon `.CR2` work. Add `--brighten=1.3` to lighten a dark photo.
+3. In `src/content/photos.ts`, set that slot's `file` to `"/assets/events/kickoff.jpg"` and write the `alt` text (what is in the picture). If the crop cuts something off, set `focus` on the slot, e.g. `"50% 70%"` to keep more of the lower part.
 
 Only publish photos of people who are fine with being on the website.
 

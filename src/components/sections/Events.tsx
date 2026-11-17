@@ -31,14 +31,14 @@ export async function Events() {
       {past.length > 0 && (
         <>
           <SectionHeading>Past events</SectionHeading>
-          <ul className="grid gap-5 sm:grid-cols-2">
+          <ul className="grid gap-5 md:grid-cols-3">
             {past.map((e) => {
               const d = e.date ? dateParts(e.date) : null;
               const body = (
                 <>
-                  <Photo id={e.photo} ratio="3 / 2" sizes="(min-width: 40rem) 50vw, 100vw" />
+                  <Photo id={e.photo} ratio="3 / 2" sizes="(min-width: 48rem) 33vw, 100vw" />
                   <div className="flex items-baseline justify-between gap-4 border-t-2 border-ink px-5 py-4">
-                    <h3 className="text-xl md:text-2xl">{e.title}</h3>
+                    <h3 className="text-xl leading-tight">{e.title}</h3>
                     {d && (
                       <time dateTime={e.date!} className="shrink-0 text-sm font-medium text-grey">
                         {d.month.slice(0, 3)} {d.day}, {d.year}

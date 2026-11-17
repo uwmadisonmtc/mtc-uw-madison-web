@@ -6,7 +6,7 @@ import generated from "./photos.generated.json";
   Each entry is a "slot" that pages refer to by id. To fill or replace one:
     1. Put the original file in /_incoming and run `npm run photos`
        (see README). It writes a web-ready copy into /public/assets/…
-    2. Set `file` below to that path, and write real `alt` text and a caption.
+    2. Set `file` below to that path, and write real `alt` text.
 
   A slot whose file does not exist yet renders as a clearly marked
   "photo needed" box, never as a stock image.
@@ -17,18 +17,39 @@ export type PhotoSlot = {
   file: string | null;
   /** Describe what is in the picture for someone who cannot see it. */
   alt: string;
-  /** Short caption shown under the photo. Optional. */
-  caption?: string;
+  /**
+   * Which part of the photo to keep when it is cropped, as "left% top%".
+   * "50% 50%" is the middle (the default); "50% 70%" keeps more of the lower part.
+   */
+  focus?: string;
   /** What should go here, shown while the slot is empty. */
   brief: string;
 };
 
 export const photos = {
-  hero: { file: null, alt: "", brief: "Hero: wide shot of students at an MTC event." },
-  kickoff: { file: null, alt: "", brief: "MTC Kickoff" },
-  "internship-panel": { file: null, alt: "", brief: "Internship Panel" },
-  "professional-development": { file: null, alt: "", brief: "Professional Development" },
-  "ai-discussion": { file: null, alt: "", brief: "AI Discussion" },
+  hero: {
+    file: "/assets/events/hero.jpg",
+    alt: "A speaker at a podium presents a Muslim Tech Collaborative slide to a seated audience in a large hall.",
+    focus: "50% 62%",
+    brief: "Hero: wide shot of students at an MTC event.",
+  },
+  "internship-panel": {
+    file: "/assets/events/internship-panel.jpg",
+    alt: "Four student panelists seated at a table, one speaking into a microphone, at the internship speaker panel.",
+    focus: "50% 68%",
+    brief: "Internship Panel",
+  },
+  "professional-development": {
+    file: "/assets/events/professional-development.jpg",
+    alt: "Rows of students and professionals seated in a ballroom, smiling toward the stage.",
+    focus: "50% 70%",
+    brief: "Professional Development",
+  },
+  "ai-discussion": {
+    file: "/assets/events/ai-discussion.jpg",
+    alt: "Students talking around a table during a discussion on AI.",
+    brief: "AI Discussion",
+  },
   "project-nfc": { file: null, alt: "", brief: "NFC Scavenger Hunt: a real tag or build session." },
 } satisfies Record<string, PhotoSlot>;
 

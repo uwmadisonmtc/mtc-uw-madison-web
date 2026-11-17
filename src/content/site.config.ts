@@ -22,7 +22,7 @@ export const links: Record<"join" | "instagram" | "linkedin" | "email" | "nation
   /* Group chat invite (Discord, GroupMe, WhatsApp…). This is the main "Join" button. */
   join: null,
   /* Full Instagram profile URL. */
-  instagram: null,
+  instagram: "https://www.instagram.com/mtcmadison/",
   /* Full LinkedIn page URL. */
   linkedin: null,
   /* Chapter email address, e.g. "name@example.org" (no "mailto:"). */

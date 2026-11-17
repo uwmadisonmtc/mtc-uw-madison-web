@@ -22,7 +22,6 @@ export type ChapterEvent = {
 };
 
 export const events: ChapterEvent[] = [
-  { title: "MTC Kickoff", date: null, photo: "kickoff" },
   { title: "Internship Panel", date: null, photo: "internship-panel" },
   { title: "Professional Development", date: null, photo: "professional-development" },
   { title: "AI Discussion", date: null, photo: "ai-discussion" },

@@ -35,7 +35,7 @@ export function Hero() {
       </div>
       <Photo
         id="hero"
-        ratio="21 / 9"
+        ratio="2 / 1"
         priority
         sizes="(min-width: 76rem) 71rem, 100vw"
         className="mt-12 rounded-2xl max-md:!aspect-[4/3] md:mt-16"

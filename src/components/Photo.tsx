@@ -37,6 +37,7 @@ export function Photo({ id, ratio, sizes, priority, className = "" }: Props) {
         priority={priority}
         placeholder={photo.dims.blurDataURL ? "blur" : "empty"}
         blurDataURL={photo.dims.blurDataURL}
+        style={photo.focus ? { objectPosition: photo.focus } : undefined}
         className="h-full w-full object-cover"
       />
     </div>
