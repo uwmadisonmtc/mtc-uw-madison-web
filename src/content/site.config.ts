@@ -15,7 +15,7 @@ export const site = {
   description:
     "Muslim Tech Collaborative at UW–Madison: students learning technology, building projects, and growing together.",
   /* Public address of the deployed site. Update when a domain is chosen. */
-  url: "https://mtc-uw-madison.vercel.app",
+  url: "https://mtc-uw-madison-web.vercel.app",
 } as const;
 
 export const links: Record<"join" | "instagram" | "linkedin" | "email" | "national", string | null> = {
