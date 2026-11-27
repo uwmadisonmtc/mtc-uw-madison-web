@@ -7,6 +7,7 @@
     broken is ever published. `npm run check` lists what is still empty.
 */
 
+import { projects } from "./projects";
 import { team } from "./team";
 
 export const site = {
@@ -34,11 +35,11 @@ export const links: Record<"join" | "instagram" | "linkedin" | "email" | "nation
 /* Where "Join" buttons go: the group chat if set, otherwise the Join section. */
 export const joinHref: string = links.join ?? "/#join";
 
-/* Menu links. Team only appears once src/content/team.ts has people in it. */
+/* Menu links. Projects and Team only appear once their lists have entries. */
 export const nav = [
   { href: "/#about", label: "About" },
   { href: "/#what-we-do", label: "What we do" },
-  { href: "/#projects", label: "Projects" },
+  ...(projects.length > 0 ? [{ href: "/#projects", label: "Projects" }] : []),
   { href: "/#events", label: "Events" },
   ...(team.length > 0 ? [{ href: "/#team", label: "Team" }] : []),
 ];
