@@ -20,7 +20,7 @@ export const projects: Project[] = [
   {
     title: "NFC Scavenger Hunt",
     blurb:
-      "A campus scavenger hunt you play by tapping your phone on NFC tags. Planned in collaboration with the CAI Commons at UW–Madison.",
+      "A campus scavenger hunt you play by tapping your phone on NFC tags, run through a web app built by MTC members. Planned with the CAI Commons at UW–Madison for February 2027.",
     status: "in-progress",
     photo: "project-nfc",
   },

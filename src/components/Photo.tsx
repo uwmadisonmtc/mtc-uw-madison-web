@@ -11,11 +11,13 @@ type Props = {
   className?: string;
 };
 
-/* A photo cropped to `ratio`. An empty slot shows a plain grey block with a note. */
+/* A photo cropped to `ratio`. An empty slot shows a grey note in development and nothing in production. */
 export function Photo({ id, ratio, sizes, priority, className = "" }: Props) {
   const photo = getPhoto(id);
 
   if (!photo?.file || !photo.dims) {
+    /* On the live site an empty slot shows nothing; the grey note is a dev-only reminder. */
+    if (process.env.NODE_ENV === "production") return null;
     return (
       <div
         style={{ aspectRatio: ratio }}

@@ -15,10 +15,10 @@ export function Join() {
           <div>
             <p className="max-w-[40ch] text-lg text-white/80">
               Open to every UW–Madison student. No application, no experience needed. Join the
-              group chat and come to the next event.
+              WhatsApp group and come to the next event.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <LinkButton href={links.join}>Join the group chat</LinkButton>
+              <LinkButton href={links.join}>Join the WhatsApp group</LinkButton>
               <LinkButton href={links.instagram} variant="outline-light">
                 Instagram
               </LinkButton>

@@ -20,13 +20,13 @@ export const site = {
 
 export const links: Record<"join" | "instagram" | "linkedin" | "email" | "national", string | null> = {
   /* Group chat invite (Discord, GroupMe, WhatsApp…). This is the main "Join" button. */
-  join: null,
+  join: "https://tr.ee/I-0MaGXv-M",
   /* Full Instagram profile URL. */
-  instagram: "https://www.instagram.com/mtcmadison/",
+  instagram: "https://www.instagram.com/mtcmadison",
   /* Full LinkedIn page URL. */
-  linkedin: null,
+  linkedin: "https://www.linkedin.com/in/muslim-tech-collaborative-at-uw-madison-975459406/",
   /* Chapter email address, e.g. "name@example.org" (no "mailto:"). */
-  email: null,
+  email: "madison@mtc.so",
   /* National Muslim Tech Collaborative. */
   national: "https://mtc.so",
 };
