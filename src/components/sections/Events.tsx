@@ -4,6 +4,12 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { splitEvents } from "@/content/events";
 import { dateParts, getToday } from "@/lib/today";
 
+/* "2027-02-03" -> "Wed, Feb 3" */
+function shortDate(iso: string) {
+  const d = dateParts(iso);
+  return `${d.weekday.slice(0, 3)}, ${d.month.slice(0, 3)} ${d.day}`;
+}
+
 export async function Events() {
   const { upcoming, past } = splitEvents(await getToday());
   const next = upcoming[0];
@@ -14,10 +20,10 @@ export async function Events() {
       {next && (
         <div className="on-accent mb-16 flex flex-col gap-6 rounded-2xl bg-accent p-6 text-white md:flex-row md:items-center md:justify-between md:p-10">
           <div>
-            <p className="font-semibold uppercase tracking-wide text-white/85">Next event</p>
+            <p className="font-semibold uppercase tracking-wide text-white/85">Upcoming</p>
             <h2 className="mt-2 text-3xl md:text-5xl">{next.title}</h2>
             <p className="mt-3 text-lg">
-              <time dateTime={next.date!}>{dateParts(next.date!).full}</time>
+              <time dateTime={next.date!}>{shortDate(next.date!)}</time>
               {next.time && ` · ${next.time}`}
               {next.location && ` · ${next.location}`}
             </p>

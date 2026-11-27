@@ -11,6 +11,8 @@
   - `time`, `location`, `url` (optional) are shown for an upcoming event.
 */
 
+import { nfcHunt } from "./nfcHunt";
+
 export type ChapterEvent = {
   title: string;
   date: string | null;
@@ -22,6 +24,13 @@ export type ChapterEvent = {
 };
 
 export const events: ChapterEvent[] = [
+  {
+    title: nfcHunt.name,
+    date: nfcHunt.date,
+    photo: "project-nfc",
+    location: nfcHunt.building,
+    url: nfcHunt.path,
+  },
   { title: "Internship Panel", date: null, photo: "internship-panel" },
   { title: "Professional Development", date: null, photo: "professional-development" },
   { title: "AI Discussion", date: null, photo: "ai-discussion" },
@@ -36,4 +45,9 @@ export function splitEvents(today: string) {
     /* dated events newest first; undated ones keep the order written above */
     .sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""));
   return { upcoming, past };
+}
+
+/** The next upcoming event, if any. */
+export function nextEvent(today: string): ChapterEvent | undefined {
+  return splitEvents(today).upcoming[0];
 }

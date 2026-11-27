@@ -15,6 +15,10 @@ const styles = {
   "outline-light": "border-2 border-white text-white hover:bg-white hover:text-ink",
 } as const;
 
+/* Pill shape shared by every button, so non-link buttons can match. */
+export const buttonBase =
+  "inline-flex h-12 items-center justify-center rounded-full px-6 font-semibold transition-colors duration-150";
+
 export function LinkButton({ href, children, variant = "accent", className = "" }: Props) {
   if (!href) return null;
   const newTab = href.startsWith("http");
@@ -22,7 +26,7 @@ export function LinkButton({ href, children, variant = "accent", className = "" 
     <a
       href={href}
       {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      className={`inline-flex h-12 items-center justify-center rounded-full px-6 font-semibold transition-colors duration-150 ${styles[variant]} ${className}`}
+      className={`${buttonBase} ${styles[variant]} ${className}`}
     >
       {children}
       {newTab && <span className="sr-only"> (opens in a new tab)</span>}

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Photo } from "@/components/Photo";
 import { SectionHeading } from "@/components/SectionHeading";
 import { projects } from "@/content/projects";
@@ -21,21 +22,26 @@ export function Projects() {
               />
               <div className="flex flex-col justify-center p-6 md:p-10">
                 <span className="w-fit rounded-full border-2 border-ink px-3 py-0.5 text-sm font-semibold">
-                  {statusLabel[p.status]}
+                  {p.label ?? statusLabel[p.status]}
                 </span>
                 <h3 className="mt-5 text-3xl md:text-4xl">{p.title}</h3>
                 <p className="mt-4 max-w-[44ch] text-lg text-grey">{p.blurb}</p>
               </div>
             </>
           );
+          const cardLink = "card flex flex-col transition-colors duration-150 hover:border-accent md:flex-row";
           return (
             <li key={p.title}>
-              {p.url ? (
+              {p.url?.startsWith("/") ? (
+                <Link href={p.url} className={cardLink}>
+                  {body}
+                </Link>
+              ) : p.url ? (
                 <a
                   href={p.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="card flex flex-col transition-colors duration-150 hover:border-accent md:flex-row"
+                  className={cardLink}
                 >
                   {body}
                   <span className="sr-only"> (opens in a new tab)</span>

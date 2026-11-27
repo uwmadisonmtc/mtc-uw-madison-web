@@ -1,8 +1,11 @@
 import { LinkButton } from "@/components/LinkButton";
 import { SectionHeading } from "@/components/SectionHeading";
+import { nextEvent } from "@/content/events";
 import { links } from "@/content/site.config";
+import { getToday } from "@/lib/today";
 
-export function Join() {
+export async function Join() {
+  const next = nextEvent(await getToday());
   const missing = (["join", "instagram", "linkedin", "email"] as const).filter((k) => !links[k]);
   return (
     <section id="join" className="on-dark bg-ink text-white">
@@ -15,7 +18,18 @@ export function Join() {
           <div>
             <p className="max-w-[40ch] text-lg text-white/80">
               Open to every UW–Madison student. No application, no experience needed. Join the
-              WhatsApp group and come to the next event.
+              WhatsApp group and come to{" "}
+              {next?.url ? (
+                <a
+                  href={next.url}
+                  className="font-semibold text-white underline decoration-white/40 underline-offset-4 transition-colors duration-150 hover:decoration-white"
+                >
+                  the next event
+                </a>
+              ) : (
+                "the next event"
+              )}
+              .
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <LinkButton href={links.join}>Join the WhatsApp group</LinkButton>
